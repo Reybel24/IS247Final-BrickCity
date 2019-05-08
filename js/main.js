@@ -22,14 +22,41 @@ function generateVisualization(dataSet, attributeNames, visType)
 {
     console.log("Generating a " + visType + " with attributes: " + attributeNames);
 
-    // Collect all the attributes into seperate lists such as
-    // {schoolName1, schoolName2, schoolName3, schoolName4}
-    // {schoolScore1, schoolScore2, schoolScore3, schoolScore4}
+    // Create container for this chart
+    $("#main-container").append("<div class=\"chart-container\"><canvas id=\"myChart\"></canvas></div>");
 
-    // actually, its all already in an array of objects so just feed it into ChartJS
-    // feed all atrribute 1
-    // feed all atrribute 2
 
+    // Map attribute 1
+    var attr = '[' + "attributeNames[0]" + ']';
+    var labels = dataSet.map(function(e)
+    {
+        //return e.attributeNames[0];
+        return eval('e' + attr);
+    });
+    //console.log("Labels: " + labels);
+
+    // Map attribute 1
+    attr = '[' + "attributeNames[1]" + ']';
+    var attributes = dataSet.map(function(e)
+    {
+        //return e.attributeNames[0];
+        return eval('e' + attr);
+    });
+
+    // Draw the chart
+    var ctx = myChart.getContext('2d');
+    var config = {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Graph Line',
+                data: attributes,
+                backgroundColor: 'rgba(0, 119, 204, 0.3)'
+            }]
+        }
+    };
+    var chart = new Chart(ctx, config);
 
     // Decide what type of vis to create depending on the visType parameter for this dataset
     switch (visType) {
@@ -49,10 +76,10 @@ function visualize(dataSetID, dataSetAttributes)
         if (data.nyc[k].id == dataSetID)
         {
             // Found it
-            // Metadata for the data
+            // Metadata for this data
             var dataMeta = data.nyc[k];
 
-            console.log("Found Dataset Name: " + dataMeta.id + ", Name: " + dataMeta.name);
+            //console.log("Found Dataset Name: " + dataMeta.id + ", Name: " + dataMeta.name);
 
             // Create the API request
             var xmlhttp = new XMLHttpRequest();
@@ -69,7 +96,7 @@ function visualize(dataSetID, dataSetAttributes)
             var attributeFilter = "";
             for (a = 0; a < dataSetAttributes.length; a++)
             {
-                // Do we need to add an 'AND'?
+                // Do we need to add AND them'?
                 attributeFilter = (a > 0) ? attributeFilter.concat("," + dataSetAttributes[a]) : attributeFilter.concat(dataSetAttributes[a]);
             }
             console.log("Filters: " + attributeFilter);
@@ -86,13 +113,16 @@ function visualize(dataSetID, dataSetAttributes)
 
 
 
-// -------------------------------
+
+
+
+// ----------------------------------------
 // Visualizations and such below
-// -------------------------------
+// ----------------------------------------
 
 // Basic bar chart
 function createBarChart(dataSet)
 {
     //console.log("generating a bar chart for you...");
-    console.log(dataSet);
+    //console.log(dataSet);
 }
