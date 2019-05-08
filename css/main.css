@@ -6,4 +6,5 @@ body {
     position: relative;
     width:40vw;
     height:40vh;
+    float: left;
 }

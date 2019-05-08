@@ -15,7 +15,6 @@ function displayGroup(groupName)
             // Create a visualization for every data item inside this data group
             for (j=0; j<dataGroups[i].dataSetList.length; j++)
             {
-                console.log("data set: " + j);
                 // Call the visualize function, pass in the data set name and its parameters
                 visualize(dataGroups[i].dataSetList[j].id, dataGroups[i].dataSetList[j].attributes);
             }
@@ -51,7 +50,6 @@ DataGroup.prototype.addDataSet = function(id, attributes)
 
 
 
-
 // ----------------------------------------
 // This is where we define the data groups
 // along with any visualizations inside it
@@ -65,7 +63,7 @@ let studentPerformanceSAT = new DataGroup(
     "Student Performance",
     "Compare SAT scores of multiple schools.");
 studentPerformanceSAT.addDataSet("satScores_2012", ["school_name", "sat_math_avg_score"]);
-studentPerformanceSAT.addDataSet("satScores_2013", ["school_name", "sat_math_avg_score"]);
+studentPerformanceSAT.addDataSet("satScores_2010", ["school_name", "writing_mean"]);
 //studentPerformanceSAT.addDataSet("satScores_2016", ["school_name", "sat_math_avg_score"]);
 //studentPerformanceSAT.addDataSet("satScores_2017", ["school_name", "sat_math_avg_score"]);
 dataGroups.push(studentPerformanceSAT);
@@ -79,6 +77,3 @@ studentPerformanceACT.addDataSet("satScores_2012", ["school_name", "sat_math_avg
 dataGroups.push(studentPerformanceACT);
 
 
-
-
-//console.log(dataGroups);
