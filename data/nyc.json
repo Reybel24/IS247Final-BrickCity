@@ -1,0 +1,25 @@
+{
+  "nyc": [
+    {
+      "id": "satScores_2012",
+      "name": "SAT Scores 2012",
+      "category": ["stuedentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/f9bf-2cp4.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "school_name",
+        "sat_critical_reading_avg_score",
+        "sat_math_avg_score",
+        "sat_writing_avg_score",
+        "num_of_sat_test_takers"
+      ]
+    },
+    {
+      "id": "satScores_2013",
+      "name": "SAT Scores 2013",
+      "category": ["stuedentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
+      "visualizationType": "barHorizontal"
+    }
+  ]
+}
