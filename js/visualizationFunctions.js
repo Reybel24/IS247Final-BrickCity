@@ -20,7 +20,7 @@ function createBarChart(dataSetID, dataSet, attributeNames) {
     // Draw the chart
     var ctx = document.getElementById(dataSetID).getContext('2d');
     var config = {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: labels,
             datasets: [{
