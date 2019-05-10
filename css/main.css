@@ -26,8 +26,8 @@
 
 header
 {
-  background-color: red;
   padding: 10px;
+  text-align: center;
 }
 
 /* Sidebar */
@@ -35,7 +35,7 @@ header
 aside
 {
   background-color: rebeccapurple;
-  width: 20%;
+  width: 10%;
   padding: 10px;
   overflow: auto;
 }
@@ -59,10 +59,22 @@ aside ul li
 
 /* Content Window */
 
+.arrowContainer
+{
+  background-color: red;
+  padding: 20px;
+}
+
+.mainHeader
+{
+  background-color: yellow;
+  padding: 20px;
+}
+
 main
 {
   background-color: lime;
-  width: 80%;
+  width: 90%;
 }
 
 #graphContainer
@@ -85,4 +97,10 @@ main
 {
 	width: 50%;
 	display: inline-block;
+}
+
+.descriptionContainer
+{
+  background-color: blue;
+  padding: 20px;
 }
