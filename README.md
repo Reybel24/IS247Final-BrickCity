@@ -1,5 +1,5 @@
 # IS247Final-BrickCity
-A data visualization web app
+A data visualization web app created by Reybel Candelaria, Tanvirul Islam, Nina LaMastra, and D'Andre Williams
 
 <h1>Documentation<h1>
 
