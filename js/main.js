@@ -32,7 +32,7 @@ $( document ).ready(function() {
         //console.log("Generating a " + visType + " with attributes: " + attributeNames);
 
         // Create container for this chart
-        $("#main-container").append("<div class=\"chart-container\"><canvas id=" + dataSetID + "\></canvas></div>");
+        $("#graphContainer").append("<div class=\"chartContainer\"><canvas id=" + dataSetID + "\></canvas></div>");
 
         // Decide what type of vis to create depending on the visType parameter for this dataset
         switch (visType) {

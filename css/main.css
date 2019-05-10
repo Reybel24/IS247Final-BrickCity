@@ -1,10 +1,88 @@
-body {
-    margin: 0;
+* { margin:0; padding:0; }
+
+.full
+{
+	height: 100vh;
 }
 
-.chart-container {
-    position: relative;
-    width:40vw;
-    height:40vh;
-    float: left;
+/* Flex Classes */
+
+.flexContainer
+{
+  display: flex;
+}
+
+.flexItem
+{
+  flex: 1;
+}
+
+.column
+{
+  flex-direction: column;
+}
+
+/* Header */
+
+header
+{
+  background-color: red;
+  padding: 10px;
+}
+
+/* Sidebar */
+
+aside
+{
+  background-color: rebeccapurple;
+  width: 20%;
+  padding: 10px;
+  overflow: auto;
+}
+
+aside ul
+{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0;
+}
+aside ul li
+{
+  list-style: none;
+  padding: 75px;
+  background-color: white;
+  flex: 1;
+  margin: 10px;
+  display: inline-flex;
+}
+
+/* Content Window */
+
+main
+{
+  background-color: lime;
+  width: 80%;
+}
+
+.graphContainer
+{
+  padding: 10px;
+  margin: auto;
+}
+
+.graphContainer ul li
+{
+  list-style: none;
+  padding: 150px;
+  background-color: white;
+  flex: 1;
+  margin: 10px;
+  display: inline-block;
+}
+
+.chartContainer
+{
+	width: 50%;
+	display: inline-block;
 }
