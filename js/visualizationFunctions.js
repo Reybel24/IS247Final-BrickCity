@@ -24,7 +24,7 @@ function createBarChart(dataSetID, dataSet, attributeNames) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'SAT Score',
+                label: attributeNames[1],
                 data: attributes,
                 backgroundColor: 'rgba(0, 119, 204, 0.3)'
             }]
@@ -33,6 +33,16 @@ function createBarChart(dataSetID, dataSet, attributeNames) {
             title: {
                 display: true,
                 text: getName(dataSetID)
+            },
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        display: false
+                    }
+                }]
             }
         }
     };

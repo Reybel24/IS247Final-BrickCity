@@ -5,7 +5,7 @@ A data visualization web app created by Reybel Candelaria, Tanvirul Islam, Nina 
 
 <h4>About the Data</h4>
 <p>All of the data about the data (in other words, metadata) is stored in the nyc.json file in json format. All data sets that
-are to be used in this project are defined in this file with various attributes including id, name, category, recource (api endpoint), and more.</p>
+are to be used in this project are defined in this file with various attributes including id, name, category, resource (api endpoint), and more.</p>
 
 <h4>Adding a page<h4>
 <p>All "pages" are contained inside the dataGroup.js file inside the <i>data</i> folder.
