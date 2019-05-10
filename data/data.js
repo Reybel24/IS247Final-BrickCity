@@ -14,6 +14,7 @@ let studentPerformanceSAT = new DataGroup(
 );
 studentPerformanceSAT.addDataSet("satScores_2012", ["school_name", "sat_math_avg_score"]);
 studentPerformanceSAT.addDataSet("satScores_2010", ["school_name", "writing_mean"]);
+studentPerformanceSAT.addDataSet("satScores_2015", ["school_name", "writing_mean"]);
 //studentPerformanceSAT.addDataSet("satScores_2016", ["school_name", "sat_math_avg_score"]);
 //studentPerformanceSAT.addDataSet("satScores_2017", ["school_name", "sat_math_avg_score"]);
 dataGroups.push(studentPerformanceSAT);

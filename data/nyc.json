@@ -27,6 +27,20 @@
         "mathematics_mean",
         "writing_mean"
       ]
+    },
+    {
+      "id": "satScores_2015",
+      "name": "SAT Scores 2015",
+      "category": ["stuedentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "school_name",
+        "number_of_test_takers",
+        "critical_reading_mean",
+        "mathematics_mean",
+        "writing_mean"
+      ]
     }
   ]
 }

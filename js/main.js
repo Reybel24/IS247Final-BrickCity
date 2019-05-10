@@ -27,12 +27,12 @@ $( document ).ready(function() {
         xmlhttp.send();
     }
 
-    // Will generate a visualization using the D3 library given a data set and vis type
+    // Will generate a visualization using the ChartJS library given a data set and vis type
     function generateVisualization(dataSetID, dataSet, attributeNames, visType) {
         //console.log("Generating a " + visType + " with attributes: " + attributeNames);
 
         // Create container for this chart
-        $("#main-container").append("<div class=\"chart-container\"><canvas id=" + dataSetID + "\></canvas></div>");
+        $("#graphContainer").append("<div class=\"chartContainer\"><canvas id=" + dataSetID + "\></canvas></div>");
 
         // Decide what type of vis to create depending on the visType parameter for this dataset
         switch (visType) {
@@ -109,6 +109,61 @@ $( document ).ready(function() {
             displayGroup(group.groupID)
         });
     }
+
+    // First thing shown when user visits apge
+    // Ask user what they want to see
+    function showIntro()
+    {
+        //console.log(context);
+
+        // Create first node
+        createFilterNode(context);
+
+    }
+
+    function createFilterNode(context)
+    {
+        context.map(function(itemGroup)
+        {
+            console.log(itemGroup.headerName);
+            itemGroup.options.map(function(innerItem)
+            {
+                console.log(innerItem.id + ", ");
+            });
+        });
+    }
+
+
+    function filterResults(categories)
+    {
+        console.log("Showing data groups matching categories: " + categories);
+    }
+
+    function createInformationContext()
+    {
+        // fix label
+        return context = [
+            {
+                headerName: "Standardized Tests",
+                label: "I want to see",
+                options: [
+                    {id: "SAT", name: "Scholastic Assessment Test (SAT)", canFilterByYear: true, canFilterByArea: true},
+                    {id: "ACT", name: "American College Test (ACT)", canFilterByYear: true, canFilterByArea: false}
+                ]
+            },
+            {
+                headerName: "Food",
+                label: "I want to see",
+                options: [
+                    {id: "SAT", name: "Scholastic Assessment Test (SAT)", canFilterByYear: true, canFilterByArea: true},
+                    {id: "ACT", name: "American College Test (ACT)", canFilterByYear: true, canFilterByArea: false}
+                ]
+            },
+        ]
+    }
+
+    var context = createInformationContext();
+    showIntro();
 
 // ----------------------------------------
 // Getters

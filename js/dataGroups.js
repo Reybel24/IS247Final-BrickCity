@@ -7,7 +7,7 @@ var dataGroups = [];
 function displayGroup(groupID)
 {
     // Clear any already displaying groups
-    $('#main-container').empty();
+    $('#graphContainer').empty();
 
     // Generate a visualization for each item in the group
     for (i=0; i<dataGroups.length; i++)
