@@ -100,11 +100,11 @@ $( document ).ready(function() {
 
     function addFeatured(group)
     {
-        var featuredItem = "<button class='featured-item' id='" + group.groupID + "'>" + group.name + "</button>";
+        var featuredItem = "<button class='featuredItem' id='" + group.groupID + "'>" + group.name + "</button>";
         $('#featured').append(featuredItem);
 
         // Add event handler for clicking and displaying group
-        $('.featured-item#' + group.groupID).on('click', function()
+        $('.featuredItem#' + group.groupID).on('click', function()
         {
             displayGroup(group.groupID)
         });
