@@ -27,7 +27,7 @@ $( document ).ready(function() {
         xmlhttp.send();
     }
 
-    // Will generate a visualization using the D3 library given a data set and vis type
+    // Will generate a visualization using the ChartJS library given a data set and vis type
     function generateVisualization(dataSetID, dataSet, attributeNames, visType) {
         //console.log("Generating a " + visType + " with attributes: " + attributeNames);
 

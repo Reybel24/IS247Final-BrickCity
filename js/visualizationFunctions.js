@@ -33,6 +33,16 @@ function createBarChart(dataSetID, dataSet, attributeNames) {
             title: {
                 display: true,
                 text: getName(dataSetID)
+            },
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        display: false
+                    }
+                }]
             }
         }
     };
