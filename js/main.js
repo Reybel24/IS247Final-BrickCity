@@ -9,23 +9,20 @@ $( document ).ready(function() {
     // Holds JSON data
     var data;
 
-    // Load the data on page load
-    loadJSON();
-
     // Loads the JSON file containing metadata for the datasets
     function loadJSON() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 data = JSON.parse(this.responseText);
-
-                // Featured
-                populateFeatured();
             }
         };
         xmlhttp.open("GET", "data/nyc.json", true);
         xmlhttp.send();
     }
+
+    // Load the data on page load
+    loadJSON();
 
     // Will generate a visualization using the D3 library given a data set and vis type
     function generateVisualization(dataSetID, dataSet, attributeNames, visType) {
@@ -43,14 +40,11 @@ $( document ).ready(function() {
     }
 
     // Loads a dataset (if it exists within the data JSON file) using its API
-    function visualize(dataSetID, dataSetAttributes)
-    {
+    function visualize(dataSetID, dataSetAttributes) {
         // Check if this resource exists
-        for (k = 0; k < data.nyc.length; k++)
-        {
+        for (k = 0; k < data.nyc.length; k++) {
             var resourceLink = "";
-            if (data.nyc[k].id == dataSetID)
-            {
+            if (data.nyc[k].id == dataSetID) {
                 // Found it
                 // Metadata for this data
                 var dataMeta = data.nyc[k];
@@ -58,8 +52,7 @@ $( document ).ready(function() {
                 // Create the API request
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200)
-                    {
+                    if (this.readyState == 4 && this.status == 200) {
                         var dataSet = JSON.parse(this.responseText);
 
                         // Pass this response to the graph generator
@@ -69,8 +62,7 @@ $( document ).ready(function() {
 
                 // Build the request to return only the fields/attributes I want
                 var attributeFilter = "";
-                for (a = 0; a < dataSetAttributes.length; a++)
-                {
+                for (a = 0; a < dataSetAttributes.length; a++) {
                     // Do we need to add AND them'?
                     attributeFilter = (a > 0) ? attributeFilter.concat("," + dataSetAttributes[a]) : attributeFilter.concat(dataSetAttributes[a]);
                 }
@@ -85,30 +77,7 @@ $( document ).ready(function() {
         }
     }
 
-    // Load the featured section
-    function populateFeatured()
-    {
-        dataGroups.map(function(group)
-        {
-            if (group.isFeatured)
-            {
-                // Create and add featured item
-                addFeatured(group);
-            }
-        });
-    }
 
-    function addFeatured(group)
-    {
-        var featuredItem = "<button class='featured-item' id='" + group.groupID + "'>" + group.name + "</button>";
-        $('#featured').append(featuredItem);
-
-        // Add event handler for clicking and displaying group
-        $('.featured-item#' + group.groupID).on('click', function()
-        {
-            displayGroup(group.groupID)
-        });
-    }
 
 // ----------------------------------------
 // Getters
