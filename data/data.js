@@ -50,6 +50,9 @@ let studentPerformanceACT = new DataGroup(
 
 // Data sets
 studentPerformanceACT.addDataSet("satScores_2012","SAT Scores 2012 (Math)",["school_name", "sat_math_avg_score"]);
+studentPerformanceACT.addDataSet("actScores_2013","ACT Scores 2013",["school_name", "critical_reading_mean"]);
+studentPerformanceACT.addDataSet("satScores_2012","SAT Scores 2013 (Math)",["school_name", "mathematics_mean"]);
+studentPerformanceACT.addDataSet("actScores_2013","ACT Scores 2012",["school_name", "writing_mean"]);
 
 // Relevant tags
 studentPerformanceACT.setTags(["SAT", "2012", "2010", "2015"]);
@@ -60,6 +63,38 @@ studentPerformanceACT.longDesc = "Some long description about this data group bl
 
 // Add
 dataGroups.push(studentPerformanceACT);
+
+
+
+
+
+// ----------------------------------------
+// Data group
+// ----------------------------------------
+// Student Performance ACT
+// This group serves to show student performance on ACTs
+// for several schools across multiple schools
+let studentGradOutcomes = new DataGroup(
+    "gradOutcomes",
+    "Student Graduate Outcomes",
+    "Compare Graduate Outcomes of Demographic Area",
+    true
+);
+
+// Data sets
+studentGradOutcomes.addDataSet("gradOutcomes_2011","Graduation Outcomes 2005-2011",["borough", "demographic"]);
+studentGradOutcomes.addDataSet("gradOutcomes_2015","Graduation Outcomes 2005 - 2015",["cohort_year", "demographic"]);
+studentGradOutcomes.addDataSet("gradOutcomes_2015","DYCD after-school programs",["program_type", "program"]);
+
+// Relevant tags
+studentGradOutcomes.setTags(["gradOutcomes", "2012", "2010", "2015"]);
+studentGradOutcomes.longDesc = "Some long description about this data group blah blah blah."
+
+// About
+studentGradOutcomes.longDesc = "Some long description about this data group blah blah blah."
+
+// Add
+dataGroups.push(studentGradOutcomes);
 
 
 
