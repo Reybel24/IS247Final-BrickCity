@@ -3,7 +3,7 @@
     {
       "id": "satScores_2012",
       "name": "SAT Scores 2012",
-      "category": ["stuedentPerformance", "otherCat"],
+      "category": ["studentPerformance", "SAT", "2016"],
       "resource": "https://data.cityofnewyork.us/resource/f9bf-2cp4.json",
       "visualizationType": "bar",
       "attributes": [
@@ -17,7 +17,7 @@
     {
       "id": "satScores_2010",
       "name": "SAT Scores 2013",
-      "category": ["stuedentPerformance", "otherCat"],
+      "category": ["stuedentPerformance", "SAT", "2010"],
       "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
       "visualizationType": "bar",
       "attributes": [
@@ -31,7 +31,21 @@
     {
       "id": "satScores_2015",
       "name": "SAT Scores 2015",
-      "category": ["stuedentPerformance", "otherCat"],
+      "category": ["stuedentPerformance", "SAT", "2015"],
+      "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "school_name",
+        "number_of_test_takers",
+        "critical_reading_mean",
+        "mathematics_mean",
+        "writing_mean"
+      ]
+    },
+    {
+      "id": "actScores_2013",
+      "name": "SAT Scores 2015",
+      "category": ["stuedentPerformance", "ACT", "2013"],
       "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
       "visualizationType": "bar",
       "attributes": [
