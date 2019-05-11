@@ -123,16 +123,11 @@ $(document).ready(function()
     // Ask user what they want to see
     function showIntro()
     {
-        // Show welcome container
-        $('#welcome').show();
+        // Show welcome screen
+        switchView("welcome");
 
         // Create first filter node
         createFilterNode(filters[0]);
-    }
-
-    function selectFilter()
-    {
-
     }
 
     function createFilterNode(filterItem)
@@ -230,10 +225,16 @@ $(document).ready(function()
         $('#results').empty();
 
         // Show results
-        results.map(function(item) {
-            if (item != null)
+        results.map(function(group) {
+            if (group != null)
             {
-                $('#results').append('<div class="filterItem">' + item.id + '</div>');
+                $('#results').append('<div class="filterItem" id="' + group.groupID + '">' + group.groupID + '</div>');
+
+                // Add event handler for clicking and displaying group
+                $('.filterItem#' + group.groupID).on('click', function()
+                {
+                    displayGroup(group);
+                });
             }
         });
 
@@ -241,18 +242,19 @@ $(document).ready(function()
 
     function filterResults()
     {
-        var results = data.nyc.map(function(item) {
+        var results = dataGroups.map(function(group) {
+            console.log("checking " + group.groupID);
             var meetsCriteria = true;
             // Check if it matches all categories
             Object.entries(appliedFilters).map(function(filter) {
-                if (!item.category.includes(filter[1]))
+                if (!group.tags.includes(filter[1]))
                 {
                     meetsCriteria = false;
                 }
             });
             if (meetsCriteria)
             {
-                return item;
+                return group;
             }
         });
         return results;
@@ -282,6 +284,20 @@ $(document).ready(function()
             }
         }
         //console.log("No next filter or next filter not found...");
+    }
+
+    function switchView(view)
+    {
+        if (view == "graph")
+        {
+            $('#welcome').hide();
+            $('#graph').show();
+        }
+        else
+        {
+            $('#graph').hide();
+            $('#welcome').show();
+        }
     }
 
 

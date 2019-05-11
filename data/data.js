@@ -17,6 +17,7 @@ studentPerformanceSAT.addDataSet("satScores_2010", ["school_name", "writing_mean
 studentPerformanceSAT.addDataSet("satScores_2015", ["school_name", "writing_mean"]);
 //studentPerformanceSAT.addDataSet("satScores_2016", ["school_name", "sat_math_avg_score"]);
 //studentPerformanceSAT.addDataSet("satScores_2017", ["school_name", "sat_math_avg_score"]);
+studentPerformanceSAT.setTags(["SAT", "2012", "2010", "2015"]);
 dataGroups.push(studentPerformanceSAT);
 
 // Create a new data group

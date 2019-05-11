@@ -6,6 +6,9 @@ var dataGroups = [];
 // This method displays a specified group of data
 function displayGroup(groupID)
 {
+    // Show graph view
+    switchView("graph");
+
     // Clear any already displaying groups
     $('#graphContainer').empty();
 
@@ -39,6 +42,8 @@ function DataGroup(id, name, shortDesc, isFeatured)
     // Short Description
     this.shortDesc = shortDesc;
 
+    this.tags = [];
+
     // Should this show up on the Featured sidebar?
     this.isFeatured = isFeatured;
 
@@ -49,5 +54,7 @@ DataGroup.prototype.addDataSet = function(id, attributes)
 {
     this.dataSetList.push({id, attributes});
 }
-
-
+DataGroup.prototype.setTags = function(tags)
+{
+    this.tags = tags;
+}
