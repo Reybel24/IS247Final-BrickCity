@@ -13,6 +13,8 @@ $(document).ready(function()
     // Kick off questions about what the user wants to see
     showIntro();
 
+
+
 });
 
     // Holds JSON data
@@ -115,7 +117,7 @@ $(document).ready(function()
         // Add event handler for clicking and displaying group
         $('.featuredItem#' + group.groupID).on('click', function()
         {
-            displayGroup(group.groupID)
+            displayGroup(group)
         });
     }
 
@@ -243,7 +245,6 @@ $(document).ready(function()
     function filterResults()
     {
         var results = dataGroups.map(function(group) {
-            console.log("checking " + group.groupID);
             var meetsCriteria = true;
             // Check if it matches all categories
             Object.entries(appliedFilters).map(function(filter) {

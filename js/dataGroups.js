@@ -4,7 +4,7 @@
 var dataGroups = [];
 
 // This method displays a specified group of data
-function displayGroup(groupID)
+function displayGroup(group)
 {
     // Show graph view
     switchView("graph");
@@ -12,23 +12,16 @@ function displayGroup(groupID)
     // Clear any already displaying groups
     $('#graphContainer').empty();
 
+    // Subtitle / short description
+    $('#pageSubtitle').text("test");
+
     // Generate a visualization for each item in the group
-    for (i=0; i<dataGroups.length; i++)
+    for (let i=0; i<group.dataSetList.length; i++)
     {
-        // Lets find the requested data group in our pool of data group objects
-        if (dataGroups[i].groupID == groupID)
-        {
-            // Create a visualization for every data item inside this data group
-            for (j=0; j<dataGroups[i].dataSetList.length; j++)
-            {
-                // Call the visualize function, pass in the data set name and its parameters
-                visualize(dataGroups[i].dataSetList[j].id, dataGroups[i].dataSetList[j].attributes);
-            }
-            // Exit the loop
-            return;
-        }
+        // Call the visualize function, pass in the data set name and its parameters
+        visualize(group.dataSetList[i].id, group.dataSetList[i].attributes);
     }
-    console.log("Sorry, data group not found: " + groupID);
+    //console.log("Sorry, data group not found: " + group.groupID);
 }
 
 function DataGroup(id, name, shortDesc, isFeatured)
