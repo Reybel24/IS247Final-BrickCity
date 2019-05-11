@@ -2,29 +2,90 @@
 // This is where we define the data groups
 // along with any visualizations inside it
 // ----------------------------------------
+// The parameters for the data objects are: id, display name, short description, and is featured
 
-// Data Group: Student Performance
+// ----------------------------------------
+// Data group
+// ----------------------------------------
+// Student Performance SAT
 // This group serves to show student performance on SATs
 // for several schools across multiple schools
 let studentPerformanceSAT = new DataGroup(
     "studentPerformanceSAT",
     "Student Performance SAT",
-    "Compare SAT scores of multiple schools.",
+    "Compare SAT scores of multiple schools",
     true
 );
+
+// Data sets
 studentPerformanceSAT.addDataSet("satScores_2012", ["school_name", "sat_math_avg_score"]);
 studentPerformanceSAT.addDataSet("satScores_2010", ["school_name", "writing_mean"]);
 studentPerformanceSAT.addDataSet("satScores_2015", ["school_name", "writing_mean"]);
-//studentPerformanceSAT.addDataSet("satScores_2016", ["school_name", "sat_math_avg_score"]);
-//studentPerformanceSAT.addDataSet("satScores_2017", ["school_name", "sat_math_avg_score"]);
+
+// Relevant tags
+studentPerformanceSAT.setTags(["SAT", "Queens", "Bronx", "2012", "2010", "2015"]);
+
+// About
+studentPerformanceSAT.longDesc = "Some long description about this data group blah blah blah."
+
+// Add
 dataGroups.push(studentPerformanceSAT);
 
-// Create a new data group
+
+
+
+// ----------------------------------------
+// Data group
+// ----------------------------------------
+// Student Performance ACT
+// This group serves to show student performance on ACTs
+// for several schools across multiple schools
 let studentPerformanceACT = new DataGroup(
     "studentPerformanceACT",
     "Student Performance ACT",
-    "Compare ACT scores of multiple schools.",
+    "Compare ACT scores of multiple schools",
     true
 );
+
+// Data sets
 studentPerformanceACT.addDataSet("satScores_2012", ["school_name", "sat_math_avg_score"]);
+
+// Relevant tags
+studentPerformanceACT.setTags(["SAT", "2012", "2010", "2015"]);
+studentPerformanceACT.longDesc = "Some long description about this data group blah blah blah."
+
+// About
+studentPerformanceACT.longDesc = "Some long description about this data group blah blah blah."
+
+// Add
 dataGroups.push(studentPerformanceACT);
+
+
+
+
+// ----------------------------------------
+// Data group
+// ----------------------------------------
+// Student Performance SAT
+// This group serves to show student performance on SATs
+// for several schools across multiple schools
+let testGroup = new DataGroup(
+    "testGroup",
+    "Test Group",
+    "Compare SAT scores of multiple schools",
+    false
+);
+
+// Data sets
+testGroup.addDataSet("satScores_2012", ["school_name", "sat_math_avg_score"]);
+testGroup.addDataSet("satScores_2010", ["school_name", "writing_mean"]);
+testGroup.addDataSet("satScores_2015", ["school_name", "writing_mean"]);
+
+// Relevant tags
+testGroup.setTags(["SAT", "Queens", "Bronx", "2012", "2010", "2015"]);
+
+// About
+testGroup.longDesc = "Some long description about this data group blah blah blah."
+
+// Add
+dataGroups.push(testGroup);
