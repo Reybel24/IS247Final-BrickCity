@@ -42,6 +42,7 @@ aside
   margin: 5px;
   padding: 10px 0;
   width: 100%;
+  cursor: pointer;
 }
 
 .featuredItem:hover
@@ -102,4 +103,63 @@ main
 .subtitle
 {
   font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Filter */
+#filtersContainer
+{
+
+}
+.filterNodeContainer
+{
+  background-color: grey;
+}
+.filterLabel
+{
+  color: green;
+  font-size: 24px;
+}
+.filterSelect
+{
+  height: 40px;
+}
+.filterOption
+{
+  color: blue;
+}
+
+/* Results */
+#resultsContainer
+{
+
+}
+.resultsItem
+{
+  width: 200px;
+  height:120px;
+  background-color: green;
+  cursor: pointer;
+}
+.resultsItemText
+{
+  font-size: 18px;
+  color:white;
+}
+
+/* Related */
+#relatedContainer{
+    background-color: grey;
+}
+.relatedItem
+{
+    width: 200px;
+    height:120px;
+    background-color: yellow;
+    cursor: pointer;
+}
+.relatedItemText
+{
+    font-size: 18px;
+    color:orange;
 }

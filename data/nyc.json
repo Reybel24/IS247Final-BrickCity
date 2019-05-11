@@ -3,7 +3,6 @@
     {
       "id": "satScores_2012",
       "name": "SAT Scores 2012",
-      "category": ["studentPerformance", "SAT", "2016"],
       "resource": "https://data.cityofnewyork.us/resource/f9bf-2cp4.json",
       "visualizationType": "bar",
       "attributes": [
@@ -17,7 +16,6 @@
     {
       "id": "satScores_2010",
       "name": "SAT Scores 2013",
-      "category": ["studentPerformance", "SAT", "2010"],
       "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
       "visualizationType": "bar",
       "attributes": [
@@ -31,7 +29,6 @@
     {
       "id": "satScores_2015",
       "name": "SAT Scores 2015",
-      "category": ["studentPerformance", "SAT", "2015"],
       "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
       "visualizationType": "bar",
       "attributes": [
@@ -45,7 +42,6 @@
     {
       "id": "actScores_2013",
       "name": "SAT Scores 2015",
-      "category": ["studentPerformance", "ACT", "2013"],
       "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
       "visualizationType": "bar",
       "attributes": [

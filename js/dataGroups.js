@@ -2,6 +2,7 @@
 
 // Groups of related visualizations
 var dataGroups = [];
+var activeDataGroup;
 
 // This method displays a specified group of data
 function displayGroup(group)
@@ -9,8 +10,12 @@ function displayGroup(group)
     // Show graph view
     switchView("graph");
 
+    // Set active
+    activeDataGroup = group;
+
     // Clear any already displaying groups
     $('#graphContainer').empty();
+    $('#relatedContainer').empty();
 
     // Title
     $('#pageTitle').text(group.name);
@@ -27,7 +32,9 @@ function displayGroup(group)
         // Call the visualize function, pass in the data set name and its parameters
         visualize(group.dataSetList[i].id, group.dataSetList[i].attributes);
     }
-    //console.log("Sorry, data group not found: " + group.groupID);
+
+    // Related content
+    showRelated();
 }
 
 function DataGroup(id, name, shortDesc, isFeatured)
@@ -58,4 +65,9 @@ DataGroup.prototype.addDataSet = function(id, attributes)
 DataGroup.prototype.setTags = function(tags)
 {
     this.tags = tags;
+}
+
+function getActiveDataGroup()
+{
+    return activeDataGroup;
 }

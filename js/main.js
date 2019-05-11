@@ -139,19 +139,20 @@ $(document).ready(function()
     function createFilterNode(filterItem)
     {
         // Create filter dropdown
-        var select = '<select class="filterOptions" id="' + filterItem.id + '">' + filterItem.options.map(function(option) {
+        var select = '<select class="filterSelect" id="' + filterItem.id + '"><option value="" selected disabled hidden>Choose</option>' + filterItem.options.map(function(option)
+        {
             var option = '<option class="filterOption" value="' + option.id + '">' + option.name + '</option>';
             return option;
         });
 
         // Show label text
         $('#filtersContainer').append('<div class="filterNodeContainer">' +
-            '<h5>' + filterItem.text + '</h5>' +
-            '<div>' + select + '</div>' +
+            '<h5 class="filterLabel">' + filterItem.text + '</h5>' +
+                select +
             '</div>');
 
         // Update the filter when something changes
-        $('.filterNodeContainer').on('change', '.filterOptions#' + filterItem.id, function(e) {
+        $('.filterNodeContainer').on('change', '.filterSelect#' + filterItem.id, function(e) {
             updateFilter($(this).attr('id'), this.value);
             var filterItem = getFilterItem($(this).attr('id'));
             showNextFilterNode(filterItem);
@@ -206,10 +207,9 @@ $(document).ready(function()
         // Year filter
         let filter_area = new Filter("area", "in");
         filter_area.addOptionGroup("Year", [
-            {id: "queens", name: "Queens"},
-            {id: "bronx", name: "Bronx"},
-            {id: "Test", name: "2018"},
-            {id: "Test2", name: "2018"},
+            {id: "Queens", name: "Queens"},
+            {id: "Bronx", name: "Bronx"},
+            {id: "Staten Island", name: "Staten Island"},
         ]);
         //filter_area.nextFilter = "area";
         filters.push(filter_area); // add to list
@@ -228,22 +228,21 @@ $(document).ready(function()
         var results = filterResults();
 
         // Clear div
-        $('#results').empty();
+        $('#resultsContainer').empty();
 
         // Show results
         results.map(function(group) {
             if (group != null)
             {
-                $('#results').append('<div class="filterItem" id="' + group.groupID + '">' + group.groupID + '</div>');
+                $('#resultsContainer').append('<div class="resultsItem" id="' + group.groupID + '"><h5 class="resultsItemText">' + group.name + '</h5></div>');
 
                 // Add event handler for clicking and displaying group
-                $('.filterItem#' + group.groupID).on('click', function()
+                $('.resultsItem#' + group.groupID).on('click', function()
                 {
                     displayGroup(group);
                 });
             }
         });
-
     }
 
     function filterResults()
@@ -268,7 +267,6 @@ $(document).ready(function()
     function showNextFilterNode(filterItem)
     {
         var nextFilterID = filterItem.nextFilter;
-
         // Check if next filter exists
         for (p = 0; p < filters.length; p++)
         {
@@ -290,6 +288,42 @@ $(document).ready(function()
         }
         //console.log("No next filter or next filter not found...");
     }
+
+    // Find and show related data groups
+    function showRelated()
+    {
+        // Just look at the first 2 tags
+        relatedTags = [getActiveDataGroup().tags[0], getActiveDataGroup().tags[1]]
+        var related = dataGroups.map(function(group) {
+            var meetsCriteria = true;
+            relatedTags.map(function(tag)
+            {
+                if (!group.tags.includes(tag))
+                {
+                    meetsCriteria = false;
+                }
+            });
+            if (meetsCriteria && !(group === getActiveDataGroup()))
+            {
+                return group;
+            }
+        });
+
+        // Show related
+        related.map(function(group) {
+            if (group != null)
+            {
+                $('#relatedContainer').append('<div class="relatedItem" id="' + group.groupID + '"><h5 class="relatedItemText">' + group.name + '</h5></div>');
+
+                // Add event handler for clicking and displaying group
+                $('.relatedItem#' + group.groupID).on('click', function()
+                {
+                    displayGroup(group);
+                });
+            }
+        });
+    }
+
 
     function switchView(view)
     {
