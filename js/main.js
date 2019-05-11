@@ -43,28 +43,29 @@ $(document).ready(function()
     }
 
     // Will generate a visualization using the ChartJS library given a data set and vis type
-    function generateVisualization(dataSetID, dataSet, attributeNames, visType) {
+    function generateVisualization(dataMeta, dataSet, dataSetParameters) {
         //console.log("Generating a " + visType + " with attributes: " + attributeNames);
 
         // Create container for this chart
-        $("#graphContainer").append("<div class=\"chartContainer\"><canvas id=" + dataSetID + "\></canvas></div>");
+        var containerID = dataMeta.id + getRandomNumber();
+        $("#graphContainer").append("<div class=\"chartContainer\"><canvas id=" + containerID + "\></canvas></div>");
 
         // Decide what type of vis to create depending on the visType parameter for this dataset
-        switch (visType) {
+        switch (dataMeta.visualizationType) {
             case "bar":
-                createBarChart(dataSetID, dataSet, attributeNames);
+                createBarChart(dataMeta, containerID, dataSet, dataSetParameters);
                 break;
         }
     }
 
     // Loads a dataset (if it exists within the data JSON file) using its API
-    function visualize(dataSetID, dataSetAttributes)
+    function visualize(dataSetParameters)
     {
         // Check if this resource exists
         for (k = 0; k < data.nyc.length; k++)
         {
             var resourceLink = "";
-            if (data.nyc[k].id == dataSetID)
+            if (data.nyc[k].id == dataSetParameters.id)
             {
                 // Found it
                 // Metadata for this data
@@ -78,16 +79,16 @@ $(document).ready(function()
                         var dataSet = JSON.parse(this.responseText);
 
                         // Pass this response to the graph generator
-                        generateVisualization(dataSetID, dataSet, dataSetAttributes, dataMeta.visualizationType)
+                        generateVisualization(dataMeta, dataSet, dataSetParameters)
                     }
                 };
 
                 // Build the request to return only the fields/attributes I want
                 var attributeFilter = "";
-                for (a = 0; a < dataSetAttributes.length; a++)
+                for (a = 0; a < dataSetParameters.attributes.length; a++)
                 {
                     // Do we need to add AND them'?
-                    attributeFilter = (a > 0) ? attributeFilter.concat("," + dataSetAttributes[a]) : attributeFilter.concat(dataSetAttributes[a]);
+                    attributeFilter = (a > 0) ? attributeFilter.concat("," + dataSetParameters.attributes[a]) : attributeFilter.concat(dataSetParameters.attributes[a]);
                 }
 
                 // Request this dataset along with any attributes I want
@@ -339,6 +340,14 @@ $(document).ready(function()
         }
     }
 
+
+// ----------------------------------------
+// Utility methods
+// ----------------------------------------
+function getRandomNumber()
+{
+    return Math.floor(Math.random()*(999-100+1)+100);
+}
 
 // ----------------------------------------
 // Getters

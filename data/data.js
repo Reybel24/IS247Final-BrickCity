@@ -18,9 +18,10 @@ let studentPerformanceSAT = new DataGroup(
 );
 
 // Data sets
-studentPerformanceSAT.addDataSet("satScores_2012", ["school_name", "sat_math_avg_score"]);
-studentPerformanceSAT.addDataSet("satScores_2010", ["school_name", "writing_mean"]);
-studentPerformanceSAT.addDataSet("satScores_2015", ["school_name", "writing_mean"]);
+studentPerformanceSAT.addDataSet("satScores_2012", "SAT Scores 2012 (Math)",["school_name", "sat_math_avg_score"]);
+studentPerformanceSAT.addDataSet("satScores_2010", "SAT Scores 2010 (Writing)",["school_name", "writing_mean"]);
+studentPerformanceSAT.addDataSet("satScores_2015", "SAT Scores 2015 (Writing)",["school_name", "writing_mean"]);
+studentPerformanceSAT.addDataSet("satScores_2012", "Number of Test Takers (2012)",["school_name", "num_of_sat_test_takers"]);
 
 // Relevant tags
 studentPerformanceSAT.setTags(["SAT", "Queens", "Bronx", "2012", "2010", "2015"]);
@@ -48,7 +49,7 @@ let studentPerformanceACT = new DataGroup(
 );
 
 // Data sets
-studentPerformanceACT.addDataSet("satScores_2012", ["school_name", "sat_math_avg_score"]);
+studentPerformanceACT.addDataSet("satScores_2012","SAT Scores 2012 (Math)",["school_name", "sat_math_avg_score"]);
 
 // Relevant tags
 studentPerformanceACT.setTags(["SAT", "2012", "2010", "2015"]);
@@ -77,9 +78,9 @@ let testGroup = new DataGroup(
 );
 
 // Data sets
-testGroup.addDataSet("satScores_2012", ["school_name", "sat_math_avg_score"]);
-testGroup.addDataSet("satScores_2010", ["school_name", "writing_mean"]);
-testGroup.addDataSet("satScores_2015", ["school_name", "writing_mean"]);
+testGroup.addDataSet("satScores_2012", "SAT Scores 2012 (Math)", ["school_name", "sat_math_avg_score"]);
+testGroup.addDataSet("satScores_2010", "SAT Scores 2012 (Writing)",["school_name", "writing_mean"]);
+testGroup.addDataSet("satScores_2015", "SAT Scores 2012 (Writing)",["school_name", "writing_mean"]);
 
 // Relevant tags
 testGroup.setTags(["SAT", "Queens", "Bronx", "2012", "2010", "2015"]);

@@ -30,7 +30,7 @@ function displayGroup(group)
     for (let i=0; i<group.dataSetList.length; i++)
     {
         // Call the visualize function, pass in the data set name and its parameters
-        visualize(group.dataSetList[i].id, group.dataSetList[i].attributes);
+        visualize(group.dataSetList[i]);
     }
 
     // Related content
@@ -58,9 +58,9 @@ function DataGroup(id, name, shortDesc, isFeatured)
     // Hold datasets wanted in this group
     this.dataSetList = [];
 }
-DataGroup.prototype.addDataSet = function(id, attributes)
+DataGroup.prototype.addDataSet = function(id, title, attributes)
 {
-    this.dataSetList.push({id, attributes});
+    this.dataSetList.push({id, title, attributes});
 }
 DataGroup.prototype.setTags = function(tags)
 {

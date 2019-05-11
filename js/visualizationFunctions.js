@@ -3,28 +3,28 @@
 // ----------------------------------------
 
 // Basic bar chart
-function createBarChart(dataSetID, dataSet, attributeNames) {
+function createBarChart(dataMeta, containerID, dataSet, dataSetParameters) {
 
     // Map attribute 1
-    var attr = '[' + "attributeNames[0]" + ']';
+    var attr = '[' + "dataSetParameters.attributes[0]" + ']';
     var labels = dataSet.map(function (e) {
         return eval('e' + attr);
     });
 
     // Map attribute 2
-    attr = '[' + "attributeNames[1]" + ']';
+    attr = '[' + "dataSetParameters.attributes[1]" + ']';
     var attributes = dataSet.map(function (e) {
         return eval('e' + attr);
     });
 
     // Draw the chart
-    var ctx = document.getElementById(dataSetID).getContext('2d');
+    var ctx = document.getElementById(containerID).getContext('2d');
     var config = {
         type: 'bar',
         data: {
             labels: labels,
             datasets: [{
-                label: attributeNames[1],
+                label: dataSetParameters.attributes[1],
                 data: attributes,
                 backgroundColor: 'rgba(0, 119, 204, 0.3)'
             }]
@@ -32,7 +32,9 @@ function createBarChart(dataSetID, dataSet, attributeNames) {
         options:  {
             title: {
                 display: true,
-                text: getName(dataSetID)
+                text: dataSetParameters.title,
+                fontSize: '19',
+                fontColor: 'grey',
             },
             legend: {
                 display: false
