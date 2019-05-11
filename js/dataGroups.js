@@ -12,8 +12,14 @@ function displayGroup(group)
     // Clear any already displaying groups
     $('#graphContainer').empty();
 
+    // Title
+    $('#pageTitle').text(group.name);
+
     // Subtitle / short description
-    $('#pageSubtitle').text("test");
+    $('#pageSubtitle').text(group.shortDesc);
+
+    // Long description
+    $('#aboutText').text(group.longDesc);
 
     // Generate a visualization for each item in the group
     for (let i=0; i<group.dataSetList.length; i++)
@@ -34,6 +40,8 @@ function DataGroup(id, name, shortDesc, isFeatured)
 
     // Short Description
     this.shortDesc = shortDesc;
+
+    this.longDesc;
 
     this.tags = [];
 
