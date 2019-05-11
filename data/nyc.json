@@ -15,7 +15,7 @@
     },
     {
       "id": "satScores_2010",
-      "name": "SAT Scores 2013",
+      "name": "SAT Scores 2010",
       "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
       "visualizationType": "bar",
       "attributes": [
@@ -27,6 +27,7 @@
       ]
     },
     {
+
       "id": "satScores_2015",
       "name": "SAT Scores 2015",
       "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
@@ -40,17 +41,295 @@
       ]
     },
     {
-      "id": "actScores_2013",
-      "name": "SAT Scores 2015",
-      "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
+    "id": "actScores_2013",
+    "name": "ACT Scores 2013",
+    "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
+    "visualizationType": "bar",
+    "attributes": [
+      "school_name",
+      "number_of_test_takers",
+      "critical_reading_mean",
+      "mathematics_mean",
+      "writing_mean"
+    ]
+  },
+  {
+      "id": "apResults_2012",
+      "name": "AP Results 2012",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/9ct9-prf9.json",
       "visualizationType": "bar",
       "attributes": [
         "school_name",
-        "number_of_test_takers",
-        "critical_reading_mean",
-        "mathematics_mean",
-        "writing_mean"
+        "num_of_ap_test_takers",
+        "num_of_ap_total_exams_taken",
+        "num_of_ap_exams_passed"
       ]
-    }
+    },
+    {
+      "id": "gradOutcomes_2011",
+      "name": "Graduation Outcomes 2005-2011",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/x2hp-8ukt.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "borough",
+        "cohort_year",
+        "demographic",
+        "num_of_ap_exams_passed",
+        "total_cohort_num",
+        "total_grads_num",
+        "total_grads_pct_of_cohort"
+      ]
+    },
+    {
+      "id": "schoolProgress_2008",
+      "name": "School Progress Report 2007-2008",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/yayv-apxh.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "district",
+        "school",
+        "principal",
+        "_2007_08_school_support_organization",
+        "progress_report_type",
+        "school_level",
+        "overall_grade",
+        "overall_score",
+        "performance_grade",
+        "progress_grade"
+      ]
+    },
+    {
+      "id": "mathExam_2015",
+      "name": "New York State Matematics Exam Score 2013-2015",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/gcvr-n8qw.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "school_name",
+        "grade",
+        "year",
+        "category",
+        "number_tested",
+        "mean_scale_score"
+      ]
+    },
+    {
+      "id": "deomographicSnapshot_2018",
+      "name": "School Demographics 2013-2018",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/s52a-8aq6.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "school_name",
+        "year",
+        "total_enrollment",
+        "grade_k",
+        "grade_1",
+        "grade_2",
+        "grade_3",
+        "grade_4",
+        "grade_5",
+        "grade_6",
+        "grade_7",
+        "grade_8",
+        "grade_9",
+        "grade_10",
+        "grade_11",
+        "grade_12",
+        "female_1",
+        "female_2",
+        "male_1",
+        "male_2",
+        "asian_1",
+        "asian_2",
+        "black_1",
+        "black_2",
+        "hispanic_1",
+        "hispanic_2",
+        "white_1",
+        "white_2",
+        "students_with_disabilities_1",
+        "students_with_disabilities_2",
+        "english_language_learners_1",
+        "english_language_learners_2",
+        "poverty_1",
+        "poverty_2",
+        "economic_need_index"
+      ]
+    },
+    {
+      "id": "classSizeD_2015",
+      "name": "Class Size Report - District Level 2014-2015",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/ub9e-s7ai.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "borough",
+        "grade_level",
+        "program_type",
+        "core_subject_ms_core_andcore_subject_ms_core_and",
+        "service_category_0k_08_only",
+        "class_size",
+        "number_of_classes",
+        "number_of_students",
+        "percent_of_students_in"
+      ]
+    },
+    {
+      "id": "afterSchoolPrograms_NDA",
+      "name": "Family Support / After School Programs",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/jtfr-nvz2.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "program_type",
+        "program",
+        "program_type",
+        "site_name",
+        "borough_community",
+        "agency",
+        "contact_number",
+        "grade_level_age_group"
+      ]
+    },
+    {
+      "id": "hsDirectory_2019",
+      "name": "High School Directory 2019",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/uq7m-95z8.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "school_name",
+        "boro",
+        "overview_paragraph",
+        "school_10th_seats",
+        "borough_community",
+        "academicopportunities1",
+        "academicopportunities2"
+      ]
+    },
+    {
+      "id": "physicalEducationSpaces_2016",
+      "name": "Physical Education Spaces 2015-2016",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/xqmg-7z3j.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "borough",
+        "Location Name",
+        "building_name",
+        "address",
+        "is_school_co_located",
+        "is_the_space_shared"
+      ]
+    },
+    {
+      "id": "classSizeB_2015",
+      "name": "Class Size Report - Borough Level 2014-2015",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/qusa-igsv.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "boro",
+        "grade_level",
+        "average_class_size"
+      ]
+    },
+    {
+      "id": "demographics_2012",
+      "name": "School Demographics 2006 - 2012",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/ihfw-zy9j.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "name",
+        "schoolyear",
+        "total_enrollment",
+        "asian_num",
+        "asian_per",
+        "black_num",
+        "black_per",
+        "hispanic_num",
+        "hispanic_per",
+        "white_num",
+        "white_per"
+      ]
+    },
+    {
+      "id": "schoolSafetyReport_2017",
+      "name": "School Safety Report 2016 - 2017",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/5qh4-a43f.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "school_year",
+        "borough",
+        "schools",
+        "nocrim_n",
+        "avgofnocrim_n"
+      ]
+    },
+    {
+      "id": "schoolProgress_2011",
+      "name": "School Progress Report 2010 - 2011",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/upwt-zvh3.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "district",
+        "school",
+        "_2010_2011_overall_grade",
+        "_2010_2011_overall_score",
+        "_2010_2011_performance_grade",
+        "_2010_2011_progress_grade"
+      ]
+    },
+    {
+      "id": "gradOutcomes_2015",
+      "name": "Graduation Outcomes 2005 - 2015",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/qk7d-gecv.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "cohort_year",
+        "demographic",
+        "total_cohort",
+        "total_grads",
+        "of_cohort_total_grads_1",
+        "of_cohort_total_grads_2"
+      ]
+    },
+    {
+      "id": "gradOutcomes_2015",
+      "name": "DYCD after-school programs",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/btx2-u66x.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "program_type",
+        "program",
+        "grade_level_age_group"
+      ]
+    },
+    {
+      "id": "school_district_breakdowns",
+      "name": "School District Breakdowns",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/g3vh-kbnw.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "percent_hispanic_latino",
+        "percent_american_indian",
+        "percent_asian_non_hispanic",
+        "percent_white_non_hispanic",
+        "percent_black_non_hispanic",
+        "percent_other_ethnicity",
+        "percent_ethnicity_unknown"
+
+      ]
+    },
   ]
 }
