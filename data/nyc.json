@@ -27,6 +27,7 @@
       ]
     },
     {
+<<<<<<< HEAD
       "id": "satScores_2015",
       "name": "SAT Scores 2015",
       "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
@@ -43,14 +44,55 @@
       "id": "actScores_2013",
       "name": "SAT Scores 2015",
       "resource": "https://data.cityofnewyork.us/resource/rt5r-ie69.json",
+=======
+      "id": "apResults_2012",
+      "name": "AP Results 2012",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/9ct9-prf9.json",
+>>>>>>> aPersonTrying-patch-1
       "visualizationType": "bar",
       "attributes": [
         "school_name",
-        "number_of_test_takers",
-        "critical_reading_mean",
-        "mathematics_mean",
-        "writing_mean"
+        "num_of_ap_test_takers",
+        "num_of_ap_total_exams_taken",
+        "num_of_ap_exams_passed"
       ]
-    }
+    },
+    {
+      "id": "gradOutcomes_2011",
+      "name": "Graduation Outcomes 2005-2011",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/x2hp-8ukt.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "borough",
+        "cohort_year",
+        "demographic",
+        "num_of_ap_exams_passed",
+        "total_cohort_num",
+        "total_grads_num",
+        "total_grads_pct_of_cohort"
+      ]
+    },
+    {
+      "id": "schoolProgress_2008",
+      "name": "School Progress Report 2007-2008",
+      "category": ["studentPerformance", "otherCat"],
+      "resource": "https://data.cityofnewyork.us/resource/yayv-apxh.json",
+      "visualizationType": "bar",
+      "attributes": [
+        "district",
+        "school",
+        "principal",
+        "_2007_08_school_support_organization",
+        "progress_report_type",
+        "school_level",
+        "overall_grade",
+        "overall_score",
+        "performance_grade",
+        "progress_grade"
+      ]
+    },
+
   ]
 }
