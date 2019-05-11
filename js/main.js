@@ -13,7 +13,11 @@ $(document).ready(function()
     // Kick off questions about what the user wants to see
     showIntro();
 
-
+    // Back arrow
+    $('#arrowContainer').on('click', function()
+    {
+        switchView("welcome");
+    });
 
 });
 
