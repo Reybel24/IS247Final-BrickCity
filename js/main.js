@@ -294,14 +294,14 @@ $(document).ready(function()
     function showRelated()
     {
         // Just look at the first 2 tags
-        relatedTags = [getActiveDataGroup().tags[0], getActiveDataGroup().tags[1], getActiveDataGroup().tags[2]]
+        relatedTags = [getActiveDataGroup().tags[0], getActiveDataGroup().tags[1]]
         var related = dataGroups.map(function(group) {
-            var meetsCriteria = true;
+            var meetsCriteria = false;
             relatedTags.map(function(tag)
             {
-                if (!group.tags.includes(tag))
+                if (group.tags.includes(tag))
                 {
-                    meetsCriteria = false;
+                    meetsCriteria = true;
                 }
             });
             if (meetsCriteria && !(group === getActiveDataGroup()))
