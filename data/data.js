@@ -24,7 +24,7 @@ studentPerformanceSAT.addDataSet("satScores_2015", "SAT Scores 2015 (Writing)",[
 studentPerformanceSAT.addDataSet("satScores_2012", "Number of Test Takers (2012)",["school_name", "num_of_sat_test_takers"]);
 
 // Relevant tags
-studentPerformanceSAT.setTags(["SAT", "Exam", "Queens", "Bronx", "2012", "2010", "2015"]);
+studentPerformanceSAT.setTags(["SAT", "Exam", "Queens", "Bronx", "2012", "2010", "2015", "StandardizedTest"]);
 
 // About
 studentPerformanceSAT.longDesc = "Some long description about this data group blah blah blah."
@@ -50,12 +50,12 @@ let studentPerformanceACT = new DataGroup(
 
 // Data sets
 studentPerformanceACT.addDataSet("satScores_2012","ACT Scores 2012 (Math)",["school_name", "sat_math_avg_score"]);
-studentPerformanceACT.addDataSet("actScores_2013","ACT Scores 2013",["school_name", "critical_reading_mean"]);
-studentPerformanceACT.addDataSet("satScores_2012","SAT Scores 2013 (Math)",["school_name", "mathematics_mean"]);
-studentPerformanceACT.addDataSet("actScores_2013","ACT Scores 2012",["school_name", "writing_mean"]);
+studentPerformanceACT.addDataSet("actScores_2013","ACT Scores 2012 (Writing)",["school_name", "writing_mean"]);
+studentPerformanceACT.addDataSet("actScores_2013","ACT Scores 2013 (Writing)",["school_name", "critical_reading_mean"]);
+//studentPerformanceACT.addDataSet("satScores_2012","SAT Scores 2013 (Math)",["school_name", "mathematics_mean"]);
 
 // Relevant tags
-studentPerformanceACT.setTags(["ACT", "Exam", "2012", "2010", "2015"]);
+studentPerformanceACT.setTags(["ACT", "Exam", "2012", "2010", "2015", "StandardizedTest"]);
 studentPerformanceACT.longDesc = "Some long description about this data group blah blah blah."
 
 // About
@@ -83,12 +83,12 @@ let studentApResults = new DataGroup(
 
 // Data sets
 studentApResults.addDataSet("apResults_2012","AP Results 2012",["school_name", "num_of_ap_test_takers"]);
-studentApResults.addDataSet("apResults_2012","Number of Exams Taken",["num_of_ap_test_takers", "num_of_ap_total_exams_taken"]);
-studentApResults.addDataSet("apResults_2012","Number of Test Takers",["school_name", "num_of_ap_exams_passed"]);
+studentApResults.addDataSet("apResults_2012","Number of Exams Taken",["school_name", "num_of_ap_total_exams_taken"]);
+studentApResults.addDataSet("apResults_2012","Number of Exams Passed",["school_name", "num_of_ap_exams_passed"]);
 studentApResults.addDataSet("apResults_2012","Number of Test Takers",["school_name", "num_of_ap_test_takers"]);
 
 // Relevant tags
-studentApResults.setTags(["AP", "2012", "2010", "2015"]);
+studentApResults.setTags(["AP", "2012", "2010", "2015", "Bronx", "Queens", "StandardizedTest"]);
 // studentApResults.longDesc = "Some long description about this data group blah blah blah."
 
 // About
@@ -115,7 +115,7 @@ let classSize = new DataGroup(
 
 // Data sets
 classSize.addDataSet("classSizeB_2015","Class Size Report - Borough Level 2014-2015",["boro", "average_class_size"]);
-classSize.addDataSet("classSizeD_2015","Class Size - District Level- (class Size vs Grade Level)",["class_size", "grade_level"]);
+classSize.addDataSet("classSizeD_2015","Class Size - District Level- (class Size vs Grade Level)",["borough", "class_size"]);
 classSize.addDataSet("classSizeB_2015","Class Size - Borough Level (Borough vs Grade Level)",["boro", "grade_level"]);
 classSize.addDataSet("classSizeD_2015","Class Size - District Level- (# of students vs % of students)",["number_of_students", "percent_of_students_in"]);
 
@@ -146,8 +146,8 @@ let schoolProgress = new DataGroup(
 );
 
 // Data sets
-schoolProgress.addDataSet("schoolProgress_2008","School Progress 07-08",["_2010_2011_performance_grade", "_2010_2011_overall_score"]);
-schoolProgress.addDataSet("schoolProgress_2011","School Progress Report 2010 - 2011",["_2010_2011_overall_grade", "_2010_2011_overall_score"]);
+schoolProgress.addDataSet("schoolProgress_2008","School Progress 07-08",["school", "_2010_2011_overall_score"]);
+schoolProgress.addDataSet("schoolProgress_2011","School Progress Report 2010 - 2011",["school", "_2010_2011_overall_score"]);
 
 // Relevant tags
 schoolProgress.setTags(["ClassSize", "2015", "borough", "school"]);
@@ -176,12 +176,12 @@ let studentGradOutcomes = new DataGroup(
 );
 
 // Data sets
-studentGradOutcomes.addDataSet("gradOutcomes_2011","Graduation Outcomes 2005-2011",["borough", "demographic"]);
-studentGradOutcomes.addDataSet("gradOutcomes_2015","Graduation Outcomes 2005 - 2015",["cohort_year", "demographic"]);
-studentGradOutcomes.addDataSet("gradOutcomes_2015","DYCD after-school programs",["program_type", "program"]);
+studentGradOutcomes.addDataSet("gradOutcomes_2011","Graduation Outcomes 2005-2011 (Bronx)",["cohort_year", "total_cohort_num"]);
+studentGradOutcomes.addDataSet("gradOutcomes_2015","Graduation Outcomes 2001 - 2011 (Queens)",["cohort_year", "total_cohort"]);
+//studentGradOutcomes.addDataSet("programs_2015","DYCD after-school programs",["program_type", "program"]);
 
 // Relevant tags
-studentGradOutcomes.setTags(["gradOutcomes", "2012", "2010", "2015"]);
+studentGradOutcomes.setTags(["gradOutcomes", "2012", "2010", "2015", "Bronx", "Queens"]);
 // studentGradOutcomes.longDesc = "Some long description about this data group blah blah blah."
 
 // About

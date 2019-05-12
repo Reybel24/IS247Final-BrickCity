@@ -55,6 +55,15 @@ $(document).ready(function()
             case "bar":
                 createBarChart(dataMeta, containerID, dataSet, dataSetParameters);
                 break;
+            case "barHorizontal":
+                createHorizontalBarChart(dataMeta, containerID, dataSet, dataSetParameters);
+                break;
+            case "pie":
+                createPieChart(dataMeta, containerID, dataSet, dataSetParameters);
+                break;
+            case "line":
+                createLineChart(dataMeta, containerID, dataSet, dataSetParameters);
+                break;
         }
     }
 
@@ -182,9 +191,9 @@ $(document).ready(function()
         // Main filter
         let filter_general = new Filter("general", "I want to see");
         filter_general.addOptionGroup("Standardized Tests", [
-            {id: "SAT", name: "Scholastic Assessment Test (SAT)"},
-            {id: "ACT", name: "American College Test (ACT)"},
-            {id: "Test", name: "American College Test (ACT)"},
+            {id: "StandardizedTest", name: "Standardized Test"},
+            {id: "AP", name: "AP Exams"},
+            {id: "gradOutcomes", name: "Graduation  Outcomes"},
         ]);
         filter_general.nextFilter = "year";
         filters.push(filter_general); // add to list

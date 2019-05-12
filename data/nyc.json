@@ -71,7 +71,7 @@
       "name": "Graduation Outcomes 2005-2011",
       "category": ["studentPerformance", "otherCat"],
       "resource": "https://data.cityofnewyork.us/resource/x2hp-8ukt.json",
-      "visualizationType": "bar",
+      "visualizationType": "line",
       "attributes": [
         "borough",
         "cohort_year",
@@ -87,7 +87,7 @@
       "name": "School Progress Report 2007-2008",
       "category": ["studentPerformance", "otherCat"],
       "resource": "https://data.cityofnewyork.us/resource/yayv-apxh.json",
-      "visualizationType": "bar",
+      "visualizationType": "barHorizontal",
       "attributes": [
         "district",
         "school",
@@ -277,7 +277,7 @@
       "name": "School Progress Report 2010 - 2011",
       "category": ["studentPerformance", "otherCat"],
       "resource": "https://data.cityofnewyork.us/resource/upwt-zvh3.json",
-      "visualizationType": "bar",
+      "visualizationType": "barHorizontal",
       "attributes": [
         "district",
         "school",
@@ -292,7 +292,7 @@
       "name": "Graduation Outcomes 2005 - 2015",
       "category": ["studentPerformance", "otherCat"],
       "resource": "https://data.cityofnewyork.us/resource/qk7d-gecv.json",
-      "visualizationType": "bar",
+      "visualizationType": "line",
       "attributes": [
         "cohort_year",
         "demographic",
@@ -303,11 +303,11 @@
       ]
     },
     {
-      "id": "gradOutcomes_2015",
+      "id": "programs_2015",
       "name": "DYCD after-school programs",
       "category": ["studentPerformance", "otherCat"],
       "resource": "https://data.cityofnewyork.us/resource/btx2-u66x.json",
-      "visualizationType": "bar",
+      "visualizationType": "line",
       "attributes": [
         "program_type",
         "program",
