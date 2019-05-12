@@ -3,22 +3,26 @@
 // ----------------------------------------
 
 // Basic bar chart
-function createBarChart(dataMeta, containerID, dataSet, dataSetParameters) {
-
+function createBarChart(dataMeta, containerID, dataSet, dataSetParameters)
+{
     // Maximum number of items represented on chart
-    var maxItems = 50;
+    var maxItems = 100;
+    var count = 0;
 
-    // Map attribute 1
-    var attr = '[' + "dataSetParameters.attributes[0]" + ']';
-    var labels = dataSet.map(function (e) {
-        return eval('e' + attr);
-    });
-
-    // Map attribute 2
-    attr = '[' + "dataSetParameters.attributes[1]" + ']';
-    var attributes = dataSet.map(function (e) {
-        return eval('e' + attr);
-    });
+    // Create labels, attributes
+    var attr0 = dataSetParameters.attributes[0];
+    var attr1 = dataSetParameters.attributes[1];
+    var labels = [];
+    var attributes = [];
+    for (let c = 0; c < dataSet.length; c++)
+    {
+        if (count < maxItems)
+        {
+            labels.push(dataSet[c][attr0]);
+            attributes.push(dataSet[c][attr1]);
+            count++;
+        }
+    }
 
     // Draw the chart
     var ctx = document.getElementById(containerID).getContext('2d');
