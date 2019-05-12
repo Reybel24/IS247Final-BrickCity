@@ -24,7 +24,7 @@ studentPerformanceSAT.addDataSet("satScores_2015", "SAT Scores 2015 (Writing)",[
 studentPerformanceSAT.addDataSet("satScores_2012", "Number of Test Takers (2012)",["school_name", "num_of_sat_test_takers"]);
 
 // Relevant tags
-studentPerformanceSAT.setTags(["SAT", "Queens", "Bronx", "2012", "2010", "2015"]);
+studentPerformanceSAT.setTags(["SAT", "Exam", "Queens", "Bronx", "2012", "2010", "2015"]);
 
 // About
 studentPerformanceSAT.longDesc = "Some long description about this data group blah blah blah."
@@ -55,7 +55,7 @@ studentPerformanceACT.addDataSet("satScores_2012","SAT Scores 2013 (Math)",["sch
 studentPerformanceACT.addDataSet("actScores_2013","ACT Scores 2012",["school_name", "writing_mean"]);
 
 // Relevant tags
-studentPerformanceACT.setTags(["SAT", "2012", "2010", "2015"]);
+studentPerformanceACT.setTags(["ACT", "Exam", "2012", "2010", "2015"]);
 studentPerformanceACT.longDesc = "Some long description about this data group blah blah blah."
 
 // About
@@ -83,9 +83,9 @@ let studentApResults = new DataGroup(
 
 // Data sets
 studentApResults.addDataSet("apResults_2012","AP Results 2012",["school_name", "num_of_ap_test_takers"]);
-studentApResults.addDataSet("apResults_2012","AP Results 2012",["num_of_ap_test_takers", "num_of_ap_total_exams_taken"]);
-studentApResults.addDataSet("apResults_2012","AP Results 2012 (Number of Test Takers)",["school_name", "num_of_ap_exams_passed"]);
-studentApResults.addDataSet("apResults_2012","AP Results 2012",["school_name", "num_of_ap_test_takers"]);
+studentApResults.addDataSet("apResults_2012","Number of Exams Taken",["num_of_ap_test_takers", "num_of_ap_total_exams_taken"]);
+studentApResults.addDataSet("apResults_2012","Number of Test Takers",["school_name", "num_of_ap_exams_passed"]);
+studentApResults.addDataSet("apResults_2012","Number of Test Takers",["school_name", "num_of_ap_test_takers"]);
 
 // Relevant tags
 studentApResults.setTags(["AP", "2012", "2010", "2015"]);
@@ -189,33 +189,3 @@ studentGradOutcomes.longDesc = "Some long description about this data group blah
 
 // Add
 dataGroups.push(studentGradOutcomes);
-
-
-
-
-// ----------------------------------------
-// Data group
-// ----------------------------------------
-// Student Performance SAT
-// This group serves to show student performance on SATs
-// for several schools across multiple schools
-let testGroup = new DataGroup(
-    "testGroup",
-    "Test Group",
-    "Compare SAT scores of multiple schools",
-    false
-);
-
-// Data sets
-testGroup.addDataSet("satScores_2012", "SAT Scores 2012 (Math)", ["school_name", "sat_math_avg_score"]);
-testGroup.addDataSet("satScores_2010", "SAT Scores 2012 (Writing)",["school_name", "writing_mean"]);
-testGroup.addDataSet("satScores_2015", "SAT Scores 2012 (Writing)",["school_name", "writing_mean"]);
-
-// Relevant tags
-testGroup.setTags(["SAT", "Queens", "Bronx", "2012", "2010", "2015"]);
-
-// About
-testGroup.longDesc = "Some long description about this data group blah blah blah."
-
-// Add
-dataGroups.push(testGroup);

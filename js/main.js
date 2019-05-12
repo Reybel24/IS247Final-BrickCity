@@ -294,7 +294,7 @@ $(document).ready(function()
     function showRelated()
     {
         // Just look at the first 2 tags
-        relatedTags = [getActiveDataGroup().tags[0], getActiveDataGroup().tags[1]]
+        relatedTags = [getActiveDataGroup().tags[0], getActiveDataGroup().tags[1], getActiveDataGroup().tags[2]]
         var related = dataGroups.map(function(group) {
             var meetsCriteria = true;
             relatedTags.map(function(tag)
