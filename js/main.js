@@ -14,7 +14,7 @@ $(document).ready(function()
     showIntro();
 
     // Back arrow
-    $('#arrowContainer').on('click', function()
+    $('#arrow').on('click', function()
     {
         switchView("welcome");
     });
@@ -148,7 +148,7 @@ $(document).ready(function()
 
         // Show label text
         $('#filtersContainer').append('<div class="filterNodeContainer">' +
-            '<h5 class="filterLabel">' + filterItem.text + '</h5>' +
+            '<h5 class="filterLabel title">' + filterItem.text + '</h5>' +
                 select +
             '</div>');
 
@@ -235,7 +235,7 @@ $(document).ready(function()
         results.map(function(group) {
             if (group != null)
             {
-                $('#resultsContainer').append('<div class="resultsItem" id="' + group.groupID + '"><h5 class="resultsItemText">' + group.name + '</h5></div>');
+                $('#resultsContainer').append('<div class="resultsItem" id="' + group.groupID + '"><h5 class="subtitle">' + group.name + '</h5></div>');
 
                 // Add event handler for clicking and displaying group
                 $('.resultsItem#' + group.groupID).on('click', function()
@@ -314,7 +314,7 @@ $(document).ready(function()
         related.map(function(group) {
             if (group != null)
             {
-                $('#relatedContainer').append('<div class="relatedItem" id="' + group.groupID + '"><h5 class="relatedItemText">' + group.name + '</h5></div>');
+                $('#relatedContainer').append('<div class="relatedItem" id="' + group.groupID + '"><h5 class="subtitle">' + group.name + '</h5></div>');
 
                 // Add event handler for clicking and displaying group
                 $('.relatedItem#' + group.groupID).on('click', function()
