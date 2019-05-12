@@ -85,7 +85,7 @@ let studentApResults = new DataGroup(
 studentApResults.addDataSet("apResults_2012","AP Results 2012",["school_name", "num_of_ap_test_takers"]);
 studentApResults.addDataSet("apResults_2012","AP Results 2012",["num_of_ap_test_takers", "num_of_ap_total_exams_taken"]);
 studentApResults.addDataSet("apResults_2012","AP Results 2012 (Number of Test Takers)",["school_name", "num_of_ap_exams_passed"]);
-
+studentApResults.addDataSet("apResults_2012","AP Results 2012",["school_name", "num_of_ap_test_takers"]);
 
 // Relevant tags
 studentApResults.setTags(["AP", "2012", "2010", "2015"]);
@@ -107,7 +107,7 @@ dataGroups.push(studentApResults);
 // This group serves to show student performance on AP Results
 // for several schools across multiple schools
 let classSize = new DataGroup(
-    "studentApResults",
+    "classSize",
     "Class Size",
     "Compare Class Size of multiple schools",
     true
@@ -120,7 +120,7 @@ classSize.addDataSet("classSizeB_2015","Class Size - Borough Level (Borough vs G
 classSize.addDataSet("classSizeD_2015","Class Size - District Level- (# of students vs % of students)",["number_of_students", "percent_of_students_in"]);
 
 // Relevant tags
-classSize.setTags(["AP", "2012", "2010", "2015"]);
+classSize.setTags(["ClassSize", "2015", "borough", "school"]);
 // studentApResults.longDesc = "Some long description about this data group blah blah blah."
 
 // About
@@ -128,6 +128,38 @@ classSize.longDesc = "Some long description about this data group blah blah blah
 
 // Add
 dataGroups.push(classSize);
+
+
+
+
+// ----------------------------------------
+// Data group
+// ----------------------------------------
+// Student AP Results
+// This group serves to show student performance on AP Results
+// for several schools across multiple schools
+let schoolProgress = new DataGroup(
+    "schoolProgress",
+    "School Progress Report",
+    "Compare School Progress of multiple schools",
+    true
+);
+
+// Data sets
+schoolProgress.addDataSet("schoolProgress_2008","School Progress 07-08",["_2010_2011_performance_grade", "_2010_2011_overall_score"]);
+schoolProgress.addDataSet("schoolProgress_2011","School Progress Report 2010 - 2011",["_2010_2011_overall_grade", "_2010_2011_overall_score"]);
+
+// Relevant tags
+schoolProgress.setTags(["ClassSize", "2015", "borough", "school"]);
+// studentApResults.longDesc = "Some long description about this data group blah blah blah."
+
+// About
+schoolProgress.longDesc = "Some long description about this data group blah blah blah."
+
+// Add
+dataGroups.push(schoolProgress);
+
+
 
 
 // ----------------------------------------
