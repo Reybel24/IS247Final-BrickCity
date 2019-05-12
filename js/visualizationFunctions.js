@@ -5,6 +5,9 @@
 // Basic bar chart
 function createBarChart(dataMeta, containerID, dataSet, dataSetParameters) {
 
+    // Maximum number of items represented on chart
+    var maxItems = 50;
+
     // Map attribute 1
     var attr = '[' + "dataSetParameters.attributes[0]" + ']';
     var labels = dataSet.map(function (e) {
